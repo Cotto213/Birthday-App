@@ -85,25 +85,13 @@ placeholder="Apellidos"
 placeholderTextColor="#969696"
 onChange={(e) => onChange(e, "lastname")}
 />
-<View
-style={[
-styles.input,
-styles.datepicker,
-formError.dateBirth && { borderColor: "#940c0c" },
-]}
->
-<Text
-style={{
-color: formData.dateBirth ? "#fff" : "#969696",
-fontSize: 18,
-}}
-onPress={showDatePicker}
->
-{formData.dateBirth
-? moment(formData.dateBirth).format("LL")
-: " de nacimiento"}
-</Text>
-</View>
+<TextInput  
+style={[styles.input, formError.name && { borderColor:
+"#940c0c" }]}
+placeholder="Fecha de nacimiento"
+placeholderTextColor="#969696"
+onChange={(e) => onChange(e, "date")}
+/>
 <TouchableOpacity onPress={onSubmit}>
 <Text style={styles.addButton}>Crear cumpleaños</Text>
 </TouchableOpacity>
@@ -115,7 +103,7 @@ style={[
     ]}
     placeholder="Fecha"
     placeholderTextColor="#969696"
-    onChange={(e) => onChange(e, "lastname")}
+    onChange={(e) => onChange(e, "date")}
 />
 </>
 );
